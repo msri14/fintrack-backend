@@ -1,0 +1,20 @@
+
+require("dotenv").config();
+const mongoose = require("mongoose");
+const app = require("./app");
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB connected");
+
+    const PORT = process.env.PORT || 5001;
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
+
+//   mongodb+srv://adminUser:testAdminUser1234@cluster0.z5ohxbf.mongodb.net/    compass
+// mongodb+srv://adminUser:testAdminUser1234@cluster0.z5ohxbf.mongodb.net/?appName=Cluster0   project
