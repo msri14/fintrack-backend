@@ -12,8 +12,11 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:5001",
-      },
+        url: process.env.NODE_ENV === "production"
+          ? "https://fintrack-backend-8rrh.onrender.com"
+          : "http://localhost:5001",
+        description: "API Server"
+      }
     ],
     components: {
       securitySchemes: {
