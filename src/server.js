@@ -16,5 +16,3 @@ mongoose.connect(process.env.MONGO_URI)
     console.error("MongoDB connection error:", err);
   });
 
-//   mongodb+srv://adminUser:testAdminUser1234@cluster0.z5ohxbf.mongodb.net/    compass
-// mongodb+srv://adminUser:testAdminUser1234@cluster0.z5ohxbf.mongodb.net/?appName=Cluster0   project
